@@ -32,7 +32,7 @@
       overlay = import ./overlay.nix;
       lib = {
         importTOML = import ./nix/importTOML.nix;
-        mkShell = import ./. { nixpgs = inputs.nixpkgs; };
+        mkShell = (import ./. { nixpgs = inputs.nixpkgs; }).mkShell;
       };
     };
 }
